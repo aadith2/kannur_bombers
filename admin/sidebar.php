@@ -10,7 +10,7 @@
     <a href="./index.php" ><i class="fa fa-home"></i> Dashboard</a>
     <a href="#players"  onclick="showPlayers()" ><i class="fa fa-users"></i> Players</a>
     <a href="#club_highlights"  onclick="showHighlights()" ><i class="fa fa-users"></i> Highlights</a>
-    <!-- <a href="#"   onclick="showCategory()" ><i class="fa fa-th-large"></i> Category</a> -->
+    <a href="#club_news"   onclick="showNews()" ><i class="fa fa-th-large"></i> News</a>
     <!-- <a href="#club_highlights"   onclick="showSizes()" ><i class="fa fa-th"></i> Highlights</a> -->
     <!-- <a href="#club_news"   onclick="showProductSizes()" ><i class="fa fa-th-list"></i> News</a>    
     <a href="#sponsers"   onclick="showProductItems()" ><i class="fa fa-th"></i> Sponsers</a>

@@ -63,6 +63,16 @@ function showHighlights(){
         }
     });
 }
+function showNews(){
+    $.ajax({
+        url:"../admin/viewNews.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.allContent-section').html(data);
+        }
+    });
+}
 
 // function showHighlights(){
 //     $.ajax({
