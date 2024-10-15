@@ -336,5 +336,19 @@
       font-size: 24px;
       color: #333; /* Adjust the color as needed */
   }
+
+  /* sidebar */
+  #mySidebar {
+    width: 250px;
+  }
+
+  #main {
+    margin-bottom: 250px;
+    display: none;
+  }
+
+  #main-content {
+    margin-left: 250px;
+  }
   
   
