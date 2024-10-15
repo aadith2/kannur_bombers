@@ -224,6 +224,18 @@ function playerDelete(id){
         }
     });
 }
+function highlightDelete(id){
+    $.ajax({
+            url:"../admin/controller/deleteHighlightController.php",
+        method:"post",
+        data:{record:id},
+        success:function(data){
+            alert('Highlight successfully deleted! ');
+            $('form').trigger('reset');
+            showHighlights();
+        }
+    });
+}
 
 
 // //delete cart data
