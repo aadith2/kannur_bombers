@@ -144,6 +144,34 @@ function addPlayer(){
 }
 
 
+function addNews(){
+    // var player_id = $('#player_id').val();
+    var title = $('#title').val();
+    var content = $('#content').val();
+    var publication_date = $('#publication_date').val();
+    var author = $('#author').val();
+    
+    var fd = new FormData();
+    fd.append('title', title);
+    fd.append('content', content);
+    fd.append('publication_date', publication_date);
+    fd.append('author', author);
+
+    $.ajax({
+        url:"../admin/controller/addNewsController.php",
+        method:"post",
+        data:fd,
+        processData: false,
+        contentType: false,
+        success: function(data){
+            alert('News added successfully!');
+            $('form').trigger('reset');
+            showNews();
+        }
+    });
+}
+
+
 function addHighlight(){
     // var player_id = $('#player_id').val();
     var url = $('#url').val();
@@ -251,6 +279,18 @@ function playerDelete(id){
             alert('Player successfully deleted!');
             $('form').trigger('reset');
             showPlayers();
+        }
+    });
+}
+function NewsDelete(id){
+    $.ajax({
+            url:"../admin/controller/deleteNewsController.php",
+        method:"post",
+        data:{record:id},
+        success:function(data){
+            alert('News successfully deleted!');
+            $('form').trigger('reset');
+            showNews();
         }
     });
 }
