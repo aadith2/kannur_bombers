@@ -144,6 +144,17 @@ function playerEditForm(id){
         }
     });
 }
+// //edit highlight data
+function highlightEditForm(id){
+    $.ajax({
+        url:"../admin/editHighlightForm.php",
+        method:"post",
+        data:{record:id},
+        success:function(data){
+            $('.allContent-section').html(data);
+        }
+    });
+}
 
 //update product after submit
 function updatePlayer(){
@@ -174,6 +185,28 @@ function updatePlayer(){
         alert('Data Update Success!');
         $('form').trigger('reset');
         showPlayers();
+      }
+    });
+}
+
+
+
+function updateHighlight(){
+    var highlights_id = $('#highlights_id').val();
+    var url = $('#url').val();
+    var fd = new FormData();
+    fd.append('highlights_id', highlights_id);
+    fd.append('url', url);
+    $.ajax({
+      url:'../admin/controller/updateHighlightController.php',
+      method:'post',
+      data:fd,
+      processData: false,
+      contentType: false,
+      success: function(data){
+        alert('Data Update Success!') ;
+        $('form').trigger('reset');
+        showHighlights();
       }
     });
 }
