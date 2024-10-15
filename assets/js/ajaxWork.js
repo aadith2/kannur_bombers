@@ -133,7 +133,27 @@ function addPlayer(){
     });
 }
 
-// //edit product data
+
+function addHighlight(){
+    // var player_id = $('#player_id').val();
+    var url = $('#url').val();
+    var fd = new FormData();
+    fd.append('url', url);
+    $.ajax({
+        url:"../admin/controller/addHighlightController.php",
+        method:"post",
+        data:fd,
+        processData: false,
+        contentType: false,
+        success: function(data){
+            alert('Highlight added successfully!');
+            $('form').trigger('reset');
+            showHighlights();
+        }
+    });
+}
+
+// //edit player data
 function playerEditForm(id){
     $.ajax({
         url:"../admin/editPlayerForm.php",

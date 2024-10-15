@@ -2,7 +2,7 @@
 <div class="header">
   <h2>Players</h2>
   <button type="button" class="btn btn-success add-btn" data-toggle="modal" data-target="#myModal">
-    Add Player
+    Add Highlight
   </button>
 </div>
   <table class="table ">
@@ -25,8 +25,8 @@
     <tr>
       <td><?=$count?></td>
       <td><?=$row["url"]?></td>
-      <td><button class="btn btn-primary" style="height:40px" onclick="HighlightsEditForm('<?=$row['highlights_id']?>')">Edit</button></td>
-      <td><button class="btn btn-danger" style="height:40px" onclick="HighlightsDelete('<?=$row['highlights_id']?>')">Delete</button></td>
+      <td><button class="btn btn-primary" style="height:40px" onclick="highlightEditForm('<?=$row['highlights_id']?>')">Edit</button></td>
+      <td><button class="btn btn-danger" style="height:40px" onclick="highlightDelete('<?=$row['highlights_id']?>')">Delete</button></td>
     </tr>
     <?php
             $count=$count+1;
@@ -35,6 +35,7 @@
     }
     ?>
   </table>
+
 
 
    <!-- Modal -->
@@ -48,10 +49,14 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-          <form  enctype='multipart/form-data' onsubmit="addHighlight()" method="POST">
+          <form onsubmit="addHighlight()" method="POST">
             <div class="form-group">
-              <label for="Highlight_url">Highlight Url</label>
-              <input type="text" class="form-control" id="Highlight_url" required>
+              <label for="url">URL</label>
+              <input type="text" class="form-control" id="url" required>
+            </div>
+            
+            <div class="form-group">
+              <button type="submit" class="btn btn-success" id="upload" style="height:40px">Add Highlight</button>
             </div>
           </form>
 
