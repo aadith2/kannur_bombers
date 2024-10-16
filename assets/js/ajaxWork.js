@@ -52,6 +52,17 @@ function showPlayers(){
     });
 }
 
+function showPoints(){
+    $.ajax({
+        url:"../admin/viewPointTable.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.allContent-section').html(data);
+        }
+    });
+}
+
 
 function showHighlights(){
     $.ajax({
@@ -139,6 +150,42 @@ function addPlayer(){
             alert('Player added successfully!');
             $('form').trigger('reset');
             showPlayers();
+        }
+    });
+}
+
+function addPoint(){
+    // var player_id = $('#player_id').val();
+    var matches_played = $('#matches_played').val();
+    var wins = $('#wins').val();
+    var draws = $('#draws').val();
+    var losses = $('#losses').val();
+    var points = $('#points').val();
+    var goals_scored = $('#goals_scored').val();
+    var goals_conceded = $('#goals_conceded').val();
+    var goal_difference = $('#goal_difference').val();
+    
+    
+    var fd = new FormData();
+    fd.append('matches_played', matches_played);
+    fd.append('wins', wins);
+    fd.append('draws', draws);
+    fd.append('losses', losses);
+    fd.append('points', points);
+    fd.append('goals_scored', goals_scored);
+    fd.append('goals_conceded', goals_conceded);
+    fd.append('goal_difference', goal_difference);
+    
+    $.ajax({
+        url:"../admin/controller/addPointController.php",
+        method:"post",
+        data:fd,
+        processData: false,
+        contentType: false,
+        success: function(data){
+            alert('Point added successfully!');
+            $('form').trigger('reset');
+            showPoints();
         }
     });
 }
