@@ -249,6 +249,28 @@ function playerEditForm(id){
         }
     });
 }
+// //edit point data
+function pointEditForm(id){
+    $.ajax({
+        url:"../admin/editPointForm.php",
+        method:"post",
+        data:{record:id},
+        success:function(data){
+            $('.allContent-section').html(data);
+        }
+    });
+}
+// //edit News data
+function NewsEditForm(id){
+    $.ajax({
+        url:"../admin/editNewsForm.php",
+        method:"post",
+        data:{record:id},
+        success:function(data){
+            $('.allContent-section').html(data);
+        }
+    });
+}
 // //edit highlight data
 function highlightEditForm(id){
     $.ajax({
