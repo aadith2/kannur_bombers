@@ -316,6 +316,71 @@ function updatePlayer(){
     });
 }
 
+//upadate point after submit
+function updatePoint(){
+    var points_table_id = $('#points_table_id').val();
+    var matches_played = $('#matches_played').val();
+    var wins = $('#wins').val();
+    var draws = $('#draws').val();
+    var losses = $('#losses').val();
+    var points = $('#points').val();
+    var goals_scored = $('#goals_scored').val();
+    var goals_conceded = $('#goals_conceded').val();
+    var goal_difference = $('#goal_difference').val();
+
+    var fd = new FormData();
+    fd.append('points_table_id', points_table_id);
+    fd.append('matches_played', matches_played);
+    fd.append('wins', wins);
+    fd.append('draws', draws);
+    fd.append('losses', losses);
+    fd.append('points', points);
+    fd.append('goals_scored', goals_scored);
+    fd.append('goals_conceded', goals_conceded);
+    fd.append('goal_difference', goal_difference);
+   
+    $.ajax({
+      url:'../admin/controller/updatePointController.php',
+      method:'post',
+      data:fd,
+      processData: false,
+      contentType: false,
+      success: function(data){
+        alert('Point Update Success!');
+        $('form').trigger('reset');
+        showPoints();
+      }
+    });
+}
+//update News after submit
+function updateNews(){
+    var news_id = $('#news_id').val();
+    var title = $('#title').val();
+    var content = $('#content').val();
+    var publication_date = $('#publication_date').val();
+    var author = $('#author').val();
+    //var category = $('#category').val();
+    var fd = new FormData();
+    fd.append('news_id', news_id);
+    fd.append('title', title);
+    fd.append('content', content);
+    fd.append('publication_date', publication_date);
+    fd.append('author', author);
+    // fd.append('category', category);
+    $.ajax({
+      url:'../admin/controller/updateNewsController.php',
+      method:'post',
+      data:fd,
+      processData: false,
+      contentType: false,
+      success: function(data){
+        alert('News Update Success!');
+        $('form').trigger('reset');
+        showNews();
+      }
+    });
+}
+
 
 
 function updateHighlight(){

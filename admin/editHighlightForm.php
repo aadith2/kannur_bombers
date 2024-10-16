@@ -12,7 +12,7 @@
       // $catID=$row1["cate_id"];
       
 ?>
-<form id="update-player" onsubmit="updateHighlight()" enctype='multipart/form-data'>
+<form id="update-player" onsubmit="updateHighlight()">
 	<div class="form-group">
       <input type="text" class="form-control" id="highlights_id" value="<?=$row1['highlights_id']?>" hidden>
     </div>
