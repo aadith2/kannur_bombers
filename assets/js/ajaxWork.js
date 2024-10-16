@@ -351,6 +351,18 @@ function playerDelete(id){
         }
     });
 }
+function pointDelete(id){
+    $.ajax({
+            url:"../admin/controller/deletePointController.php",
+        method:"post",
+        data:{record:id},
+        success:function(data){
+            alert('Point successfully deleted!');
+            $('form').trigger('reset');
+            showPoints();
+        }
+    });
+}
 function NewsDelete(id){
     $.ajax({
             url:"../admin/controller/deleteNewsController.php",
