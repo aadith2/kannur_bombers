@@ -12,9 +12,7 @@
     <a href="#club_highlights"  onclick="showHighlights()" ><i class="fa fa-users"></i> Highlights</a>
     <a href="#club_news"   onclick="showNews()" ><i class="fa fa-th-large"></i> News</a>
     <a href="#points_table"   onclick="showPoints()" ><i class="fa fa-th"></i> Point Table</a>
-    <!-- <a href="#club_news"   onclick="showProductSizes()" ><i class="fa fa-th-list"></i> News</a>    
-    <a href="#sponsers"   onclick="showProductItems()" ><i class="fa fa-th"></i> Sponsers</a>
-    <a href="#points_table" onclick="showOrders()"><i class="fa fa-list"></i> Point Table</a> -->
+    <a href="#sponsers"   onclick="showSponsers()" ><i class="fa fa-th-large"></i> Sponsers</a>
   
   <!---->
 </div>

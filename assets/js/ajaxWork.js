@@ -51,6 +51,16 @@ function showPlayers(){
         }
     });
 }
+function showSponsers(){
+    $.ajax({
+        url:"../admin/viewSponsers.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.allContent-section').html(data);
+        }
+    });
+}
 
 function showPoints(){
     $.ajax({
@@ -150,6 +160,28 @@ function addPlayer(){
             alert('Player added successfully!');
             $('form').trigger('reset');
             showPlayers();
+        }
+    });
+}
+function addSponser(){
+    // var player_id = $('#player_id').val();
+    var name = $('#name').val();
+    var file=$('#image')[0].files[0];
+    
+    var fd = new FormData();
+    fd.append('name', name);;
+    fd.append('file', file);
+    fd.append('upload', upload);
+    $.ajax({
+        url:"../admin/controller/addSponserController.php",
+        method:"post",
+        data:fd,
+        processData: false,
+        contentType: false,
+        success: function(data){
+            alert('Sponser added successfully!' + data);
+            $('form').trigger('reset');
+            showSponsers();
         }
     });
 }
