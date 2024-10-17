@@ -281,6 +281,17 @@ function playerEditForm(id){
         }
     });
 }
+//edit  sponser date
+function sponserEditForm(id){
+    $.ajax({
+        url:"../admin/editSponserForm.php",
+        method:"post",
+        data:{record:id},
+        success:function(data){
+            $('.allContent-section').html(data);
+        }
+    });
+}
 // //edit point data
 function pointEditForm(id){
     $.ajax({
@@ -344,6 +355,52 @@ function updatePlayer(){
         alert('Data Update Success!');
         $('form').trigger('reset');
         showPlayers();
+      }
+    });
+}
+
+function login(){
+    var username = $('#username').val();
+    var password = $('#password').val();
+    var fd = new FormData();
+    fd.append('username', username);
+    fd.append('password', password);
+    alert(username + password);
+    $.ajax({
+        url:'../admin/controller/loginController.php',
+        method:'post',
+        data:fd,
+        processData: false,
+        contentType: false,
+        success: function(data){
+            alert(data);
+        }
+        
+        
+    });
+}
+
+//update sponser
+function updateSponser(){
+    var sponser_id = $('#sponser_id').val();
+    var name = $('#name').val();
+    var existingImage = $('#existingImage').val();
+    var newImage = $('#newImage')[0].files[0];
+    var fd = new FormData();
+    fd.append('sponser_id', sponser_id);
+    fd.append('name', name);
+    fd.append('existingImage', existingImage);
+    fd.append('newImage', newImage);
+    $.ajax({
+      url:'../admin/controller/updateSponserController.php',
+      method:'post',
+      data:fd,
+      processData: false,
+      contentType: false,
+      success: function(data){
+        alert('Sponser Update Success!');
+        $('form').trigger('reset');
+        showSponsers();
       }
     });
 }

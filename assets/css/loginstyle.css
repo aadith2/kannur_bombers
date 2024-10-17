@@ -1,0 +1,136 @@
+/* Common Form Styles */
+.form-box {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 40px;
+    border: 2px solid red;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.login-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: red;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.subtitle {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #ccc;
+    animation: fadeInUp 1.5s ease-out forwards;
+    text-align: center;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.input-field {
+    margin: 10px 0;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    font-size: 1em;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-field:focus {
+    background-color: #333;
+    outline: none;
+    border: 1px solid red;
+    transform: scale(1.05) translateZ(20px); /* 3D effect on focus */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.login-btn {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #ff3333;
+    transform: scale(1.1) translateZ(20px); /* 3D effect on hover */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+.signup-link {
+    margin-top: 20px;
+    color: #ccc;
+    font-size: 0.9em;
+    animation: fadeIn 2s ease forwards;
+    text-align: center;
+}
+
+.signup-link a {
+    color: red;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+    color: #ff6666;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .form-box {
+        max-width: 90%;
+    }
+}
+  
