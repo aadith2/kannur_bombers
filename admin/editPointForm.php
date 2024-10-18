@@ -17,6 +17,11 @@
       <input type="text" class="form-control" id="points_table_id" value="<?=$row1['points_table_id']?>" hidden>
     </div>
     <div class="form-group">
+      <label for="team_name">Team Name</label>
+      <input type="text" class="form-control" id="team_name" value="<?=$row1['team_name']?>">
+    </div>
+      
+    <div class="form-group">
       <label for="matches_played">Matches</label>
       <input type="number" class="form-control" id="matches_played" value="<?=$row1['matches_played']?>">
     </div>

@@ -1,6 +1,7 @@
 <?php
     include_once "../../config/dbconnect.php";
     
+        $team_name= $_POST['team_name'];
         $matches_played= $_POST['matches_played'];
         $wins= $_POST['wins'];
         $draws= $_POST['draws'];
@@ -13,8 +14,8 @@
     
 
          $insert = mysqli_query($conn,"INSERT INTO points_table
-         (matches_played,wins,draws,losses,points,goals_scored,goals_conceded,goal_difference) 
-         VALUES ('$matches_played','$wins','$draws','$losses','$points','$goals_scored','$goals_conceded','$goal_difference')");
+         (team_name,matches_played,wins,draws,losses,points,goals_scored,goals_conceded,goal_difference) 
+         VALUES ('$team_name','$matches_played','$wins','$draws','$losses','$points','$goals_scored','$goals_conceded','$goal_difference')");
  
          if(!$insert)
          {

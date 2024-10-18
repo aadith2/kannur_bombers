@@ -1,7 +1,7 @@
 <!-- Sidebar -->
 <div class="sidebar" id="mySidebar">
 <div class="side-header">
-    <img src="../assets/img/saurav-rastogi-AOKflTRaRjo-unsplash.jpg" width="120" height="120" alt="Swiss Collection"> 
+    <img src="../assets/img/logo.jpg" width="120" height="120" alt="Swiss Collection"> 
     <h5 style="margin-top:10px;">Hello, Admin</h5>
 </div>
 

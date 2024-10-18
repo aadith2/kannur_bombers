@@ -2,6 +2,7 @@
     include_once "../../config/dbconnect.php";
     
     $points_table_id=$_POST['points_table_id'];
+    $team_name=$_POST['team_name'];
     $matches_played= $_POST['matches_played'];
     $wins= $_POST['wins'];
     $draws= $_POST['draws'];
@@ -12,6 +13,7 @@
     $goal_difference= $_POST['goal_difference'];
 
     $updateItem = mysqli_query($conn,"UPDATE points_table SET 
+        team_name='$team_name', 
         matches_played='$matches_played', 
         wins='$wins', 
         draws='$draws',

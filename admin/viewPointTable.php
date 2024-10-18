@@ -9,6 +9,7 @@
     <thead>
       <tr>
         <th class="text-center">S.N.</th>
+        <th class="text-center">Team Name</th>
         <th class="text-center">Matches Played</th>
         <th class="text-center">Wins </th>
         <th class="text-center">Draw</th>
@@ -31,6 +32,7 @@
     ?>
     <tr>
       <td><?=$count?></td>
+      <td><?=$row["team_name"]?> </td>
       <td><?=$row["matches_played"]?> </td>
       <td><?=$row["wins"]?></td>
       <td><?=$row["draws"]?></td>
@@ -63,6 +65,10 @@
         </div>
         <div class="modal-body">
           <form  enctype='multipart/form-data' onsubmit="addPoint()" method="POST">
+            <div class="form-group">
+              <label for="team_name">Team Name</label>
+              <input type="text" class="form-control" id="team_name" required>
+            </div>
             <div class="form-group">
               <label for="matches_played">Matches</label>
               <input type="number" class="form-control" id="matches_played" required>

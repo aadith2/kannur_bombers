@@ -33,7 +33,6 @@
         </nav>
         <div class="search-login">
             <input type="text" placeholder="Search...">
-            <a href="login.php" class="login-btn">Login</a>
         </div>
     </header>
 
@@ -121,7 +120,7 @@
             <thead>
                 <tr>
                     <th>Position</th>
-                    <!-- <th>Team</th> -->
+                    <th>Team</th>
                     <th>Played</th>
                     <th>Won</th>
                     <th>Drawn</th>
@@ -131,27 +130,27 @@
             </thead>
             <tbody>
                 <?php
-      $sql="SELECT * from points_table ORDER BY points, goal_difference DESC";
-      $result=$conn-> query($sql);
-      $count=1;
-      if ($result-> num_rows > 0){
-        while ($row=$result-> fetch_assoc()) {
-           
-    ?>
-                <tr>
-                    <td><?=$count?></td>
-                    <td><?=$row["matches_played"]?> </td>
-                    <td><?=$row["wins"]?></td>
-                    <td><?=$row["draws"]?></td>
-                    <td><?=$row["losses"]?></td>
-                    <td><?=$row["points"]?></td>
-
-                </tr>
-                <?php
-            $count=$count+1;
-           
-        }
-    }
+     $sql = "SELECT * FROM points_table ORDER BY points DESC, goal_difference DESC";
+     $result = $conn->query($sql);
+     $count = 1;
+     
+     if ($result->num_rows > 0) {
+         while ($row = $result->fetch_assoc()) {
+     ?>
+             <tr>
+                 <td><?=$count?></td>
+                 <td><?=$row["team_name"]?></td>
+                 <td><?=$row["matches_played"]?></td>
+                 <td><?=$row["wins"]?></td>
+                 <td><?=$row["draws"]?></td>
+                 <td><?=$row["losses"]?></td>
+                 <td><?=$row["points"]?></td>
+             </tr>
+     <?php
+             $count++;
+         }
+     }
+     
     ?>
                            </tbody>
         </table>
@@ -222,12 +221,12 @@
         </div>
         <div class="social-media">
             <a href="https://www.facebook.com/login/"><img class="smlogo"
-                    src="assets/img/5296499_fb_facebook_facebook logo_icon.svg" height="20" width="20"
+                    src="./assets/img/5296499_fb_facebook_facebook logo_icon.jpg" height="20" width="20"
                     alt="Facebook"></a>
-            <a href="https://twitter.com/login"><img class="smlogo" src="assets/img/logo-white.png" height="20"
+            <a href="https://twitter.com/login"><img class="smlogo" src="./assets/img/Twitter X Icon.png" height="20"
                     width="20" alt="Twitter"></a>
             <a href="https://www.secure.instagram.com/accounts/login/?next=%2Fharianbanten.co.id%2F&source=desktop_nav"><img
-                    class="smlogo" src="assets/img/5296765_camera_instagram_instagram logo_icon.png" height="20"
+                    class="smlogo" src="./assets/img/5296765_camera_instagram_instagram logo_icon.png" height="20"
                     width="20" alt="Instagram"></a>
         </div>
         <p>&copy; 2024 Kannur Bombers FC</p>

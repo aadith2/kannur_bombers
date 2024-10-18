@@ -188,6 +188,7 @@ function addSponser(){
 
 function addPoint(){
     // var player_id = $('#player_id').val();
+    var team_name = $('#team_name').val();
     var matches_played = $('#matches_played').val();
     var wins = $('#wins').val();
     var draws = $('#draws').val();
@@ -199,6 +200,7 @@ function addPoint(){
     
     
     var fd = new FormData();
+    fd.append('team_name', team_name);
     fd.append('matches_played', matches_played);
     fd.append('wins', wins);
     fd.append('draws', draws);
@@ -408,6 +410,7 @@ function updateSponser(){
 //upadate point after submit
 function updatePoint(){
     var points_table_id = $('#points_table_id').val();
+    var team_name = $('#team_name').val();
     var matches_played = $('#matches_played').val();
     var wins = $('#wins').val();
     var draws = $('#draws').val();
@@ -419,6 +422,7 @@ function updatePoint(){
 
     var fd = new FormData();
     fd.append('points_table_id', points_table_id);
+    fd.append('team_name', team_name);
     fd.append('matches_played', matches_played);
     fd.append('wins', wins);
     fd.append('draws', draws);
@@ -502,6 +506,18 @@ function playerDelete(id){
             alert('Player successfully deleted!');
             $('form').trigger('reset');
             showPlayers();
+        }
+    });
+}
+function sponserDelete(id){
+    $.ajax({
+            url:"../admin/controller/deleteSponserController.php",
+        method:"post",
+        data:{record:id},
+        success:function(data){
+            alert('Sponser successfully deleted!');
+            $('form').trigger('reset');
+            showSponsers();
         }
     });
 }
