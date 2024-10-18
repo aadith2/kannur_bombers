@@ -215,8 +215,8 @@
     <footer>
         <div class="footer-links">
             <ul>
-                <li><a href="assets/txt/Kannur_Bombers_FC_Privacy_Policy.txt">Privacy Policy</a></li>
-                <li><a href="assets/txt/Kannur_Bombers_FC_Terms_of_Use.txt">Terms of Use</a></li>
+                <li><a href="./assets/txt/Kannur_Bombers_FC_Privacy_Policy.txt">Privacy Policy</a></li>
+                <li><a href="./assets/txt/Kannur_Bombers_FC_Terms_of_Use.txt">Terms of Use</a></li>
             </ul>
         </div>
         <div class="social-media">
